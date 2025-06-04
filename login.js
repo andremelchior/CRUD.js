@@ -45,6 +45,11 @@ function logar(event) {
     }
 }
 
+function logado() {
+    const user = sessionStorage.getItem("usuario");
+    document.querySelector("#nome-usuario").innerHTML = user;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     if (!localStorage.getItem("bancodedados")) {
         database();
