@@ -8,3 +8,5 @@
   ```bash
   admin1234
   ```
+
+  Clique [AQUI](https://andremelchior.github.io/CRUD.js/) para acessar o site online.
