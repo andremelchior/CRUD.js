@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/styletab.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="code.js" defer></script>
+    <title>CRUD</title>
 </head>
+
 <body>
-    <h1>painel de administrador</h1>
+    <header>
+        <h1 class="header-title">Cadastro</h1>
+    </header>
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar</button>
+        <table id="tableClient" class="records">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Senha</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br><br>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Usuario</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    <input type="number" id="id" class="modal-field" placeholder="Id do Usuario" required>
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Usuario"
+                        required>
+                    <input type="email" id="email" class="modal-field" placeholder="E-mail do Usuario" required>
+                    <input type="password" id="senha" class="modal-field" placeholder="Senha do Usuario" required>
+                </form>
+                <footer class="modal-footer">
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+        <button style="background-color: var(--primary-color); padding: 10px 25px; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: 700; border-radius: 10px; border: 1px solid white; cursor: pointer;" onclick="window.location.href = 'index.html'">Sair</button>
+
+    </main>
 </body>
 </html>

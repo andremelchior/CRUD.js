@@ -2,16 +2,16 @@ function database() {
     let db = [
         {
             id: 1,
-            usuario: "admin",
+            nome: "admin",
             email: "admin@gmail.com",
             senha: "admin1234",
         },
         {
             id: 2,
-            usuario: "user",
+            nome: "user",
             email: "user@gmail.com",
             senha: "user1234",
-        }
+        },
     ];
 
     let json = JSON.stringify(db);
@@ -24,23 +24,26 @@ function logar(event) {
     let mail = document.querySelector("#email").value;
     let sn = document.querySelector("#senha").value;
     let dados = JSON.parse(localStorage.getItem("bancodedados"));
+    let dados2 = JSON.parse(localStorage.getItem("db_client"));
+    dados = dados.concat(dados2);
+    localStorage.setItem("bancodedados", JSON.stringify(dados));
 
     for (let i = 0; i < dados.length; i++) {
         if (mail == dados[i].email && sn == String(dados[i].senha)) {
             cadastroOK = true;
             if (mail == "admin@gmail.com" && sn == "admin1234") {
-                sessionStorage.setItem("admin", dados[i].usuario);
+                sessionStorage.setItem("admin", dados[i].nome);
                 window.location.href = "painel.html";
             } else {
-                sessionStorage.setItem("usuario", dados[i].usuario);
+                sessionStorage.setItem("usuario", dados[i].nome);
                 window.location.href = "home.html";
             }
             break;
-        }else{
+        } else {
             cadastroOK = false;
         }
     }
-    if (cadastroOK != true){
+    if (cadastroOK != true) {
         window.alert("E-mail ou senha incorretos! tente novamente.");
     }
 }
